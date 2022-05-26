@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+  <link rel="stylesheet" type="text/css" href="css/mainPage.css" />
+  <title>Main page</title>
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+  <!-- <meta name="format-detection" content="telephone=no" /> -->
+
+</head>
+<body>
+
+  <span><span></span></span>
+  <div class="wrap">
+    <a id="mainButton" onclick="mainButton()">
+      <div id="mainButtonDiv">
+      <img src="img/MainCircle2.png" alt="main circle frame">
+
+      <img class="closed" id="innerCircleClosed" src="img/2022innerCirc.png" alt="closed main circle: inner part">
+      <img class="closed" id="circleFanClosed" src="img/2022middleFan.png" alt="closed main circle: fan part">
+      <img class="closed" id="rightClosed" src="img/orangeSideR.png" alt="closed main circle: right part">
+      <img class="closed" id="leftClosed" src="img/orangeSideL.png" alt="closed main circle: left part">
+
+      <img class="opened" id="innerCircleOpened" src="img/2022midOpen.png" alt="opened main circle: inner part">
+      <img class="opened" id="rightOpen" src="img/blueSidesR.png" alt="opened main circle: right part">
+      <img class="opened" id="leftOpen" src="img/blueSidesL.png" alt="opened main circle: left part">
+    </div>
+    </a>
+    <a onclick="otherButtons('resume')" id="resumeID">
+      <div>
+        <img id="frame" src="img/2022childCircleFrame.png" alt="resume circle: frame">
+        <img id="dashes" src="img/2022childCircleDashes.png" alt="resume circle: dashes">
+        <img id="outerRotation" src="img/2022childCircleOuterRotation.png" alt="resume circle: outer rotation">
+        <img id="innerRotation" src="img/2022childCircleInnerRotation.png" alt="resume circle: inner rotation">
+        <img id="contact" src="img/2022resume.png" alt="resume circle: resume design">
+      </div>
+    </a>
+
+    <a onclick="otherButtons('portfolio')" id="portfolioID">
+      <div>
+        <img id="frame" src="img/2022childCircleFrame.png" alt="portfolio circle: frame">
+        <img id="dashes" src="img/2022childCircleDashes.png" alt="portfolio circle: dashes">
+        <img id="outerRotation" src="img/2022childCircleOuterRotation.png" alt="portfolio circle: outer rotation">
+        <img id="innerRotation" src="img/2022childCircleInnerRotation.png" alt="portfolio circle: inner rotation">
+        <img id="contact" src="img/2022portfolio.png" alt="portfolio circle: portfolio design">
+      </div>
+    </a>
+    <a onclick="otherButtons('contact')" id="contactID">
+      <div>
+        <img id="frame" src="img/2022childCircleFrame.png" alt="contact circle: frame">
+        <img id="dashes" src="img/2022childCircleDashes.png" alt="contact circle: dashes">
+        <img id="outerRotation" src="img/2022childCircleOuterRotation.png" alt="contact circle: outer rotation">
+        <img id="innerRotation" src="img/2022childCircleInnerRotation.png" alt="contact circle: inner rotation">
+        <img id="contact" src="img/2022contact.png" alt="contact circle: contact design">
+      </div>
+    </a>
+
+    <a id="window">
+      <div>
+        <img src="img/windowFrame.png"  alt="window frame">
+      </div>
+    </a>
+
+    <a href="resume.pdf" id="resumeWindow">
+        <img src="img/2022pdf.png" alt="resume icon">
+    </a>
+
+    <a id="portfolioWindow">
+      <img id="gitHub" src="img/gitHub2.png" alt="github icon">
+      <img id="pinterest" src="img/pinterest.png" alt="pinterest icon">
+    </a>
+
+    <a href="mailto:m4d@outlook.sa" class="myContactInfo">M4dzyy@gmail.com</a>
+    <a href="tel:720-256-3590" class="myContactInfo">720-256-3590</a>
+    <p class="myContactInfo">Full name: Abdulaziz alkhelaiwi</p>
+    <p class="p2 myContactInfo">Preferred name: Aziz</p>
+
+  </div>
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>
