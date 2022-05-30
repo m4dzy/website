@@ -7,6 +7,8 @@
 let mainButtonOpened = false;
 let mainButtonMinimized = false;
 let clickedButton;
+let loadPDFOnce;
+let resumeWindowActive;
 //main circle parts
 var rightPartOpened = document.querySelector('#rightOpen');
 var leftPartOpened = document.querySelector('#leftOpen');
@@ -22,33 +24,33 @@ var contactCircle=document.querySelector('#contactID');
 var mainCircle=document.querySelector('#mainButton');
 var mainCircleLowerDiv=document.querySelector('#mainButtonDiv');
 //windows
-var windowFrame=document.querySelector('#window');
-var resumeWindowOptions=document.querySelector('#resumeWindow');
+var windowFrame=document.querySelector('.window');
+var resumeWindowOptions=document.querySelector('#resumePDF');
+var embededPDF=document.querySelector('#embededPDF');
 var portfolioWindowOptions=document.querySelector('#portfolioWindow');
 var contactWindowOptions=document.querySelector('#contactWindow');
 
 function mainButton() {
 
   if (!mainButtonOpened && !mainButtonMinimized) {
+    leftPartClosed.classList.add("closeLO");
+    rightPartClosed.classList.add("closeRO");
+    leftPartOpened.classList.add("closeLC");
+    rightPartOpened.classList.add("closeRC");
     innerCircleClosed.style.animation = "changeOpacityHide 0.6s linear forwards";
     circleFanClosed.style.animation = "changeOpacityHide 0.6s linear forwards";
     innerCircleOpened.style.animation = "changeOpacityShow 0.6s linear forwards";
     resumeCircle.style.animation = "expandResume 0.6s linear forwards";
     portfolioCircle.style.animation = "expandPortfolio 0.6s linear forwards";
     contactCircle.style.animation = "expandContact 0.6s linear forwards";
-    leftPartClosed.style.animation = "rotateLeftOrange 0.6s ease-out forwards";
-    rightPartClosed.style.animation = "rotateRightOrange 0.6s ease-out  forwards";
-    leftPartOpened.style.animation = "rotateLeftCyanBack 0.6s ease-in forwards";
-    rightPartOpened.style.animation = "rotateRightCyanBack 0.6s ease-in forwards";
     mainButtonOpened = true;
 
   }
   else if (mainButtonOpened && !mainButtonMinimized) {
-    leftPartClosed.style.animation = "rotateLeftOrangeBack 1s ease forwards";
-    rightPartClosed.style.animation = "rotateRightOrangeBack 1s ease forwards";
-    rightPartOpened.style.animation = "rotateRightCyan 1s ease forwards";
-    leftPartOpened.style.animation = "rotateLeftCyan 1s ease forwards";
-
+    leftPartClosed.classList.remove("closeLO");
+    rightPartClosed.classList.remove("closeRO");
+    leftPartOpened.classList.remove("closeLC");
+    rightPartOpened.classList.remove("closeRC");
     innerCircleClosed.style.animation = "changeOpacityShow 0.6s linear forwards";
     circleFanClosed.style.animation = "changeOpacityShow 0.6s linear forwards";
     innerCircleClosed.style.animation = "rotate 75s linear infinite reverse";
@@ -61,9 +63,8 @@ function mainButton() {
 
   }
   else if (mainButtonOpened && mainButtonMinimized) {
-
     mainCircle.style.animation = "expandMain 0.7s ease-out forwards ";
-    mainCircleLowerDiv.style.animation = "unrotateScale 0.7s ease-in forwards";
+    mainCircleLowerDiv.style.animation = "undoRotateScaleMain 0.7s ease-in forwards";
 
     setTimeout(function () {
       windowFrame.style.visibility = "hidden";
@@ -80,6 +81,8 @@ function mainButton() {
       case "resume":
         resumeWindowOptions.style.animation = "changeOpacityHide 0.4s linear forwards";
         resumeWindowOptions.style.pointerEvents = "none";
+        embededPDF.style.visibility="hidden";
+        resumeWindowActive=false;
         break;
       case "portfolio":
         portfolioWindowOptions.style.animation = "changeOpacityHide 0.4s linear forwards";
@@ -98,9 +101,8 @@ function mainButton() {
 function otherButtons(currentClickedButton) {
   clickedButton = currentClickedButton;
   mainButtonMinimized = true;
-
   mainCircle.style.animation = "minimizeMain 0.7s ease-in forwards";
-  mainCircleLowerDiv.style.animation = "rotateScale 0.7s ease-in forwards";
+  mainCircleLowerDiv.style.animation = "rotateScaleMain 0.7s ease-in forwards";
 
   setTimeout(function () {
     windowFrame.style.visibility = "visible";
@@ -116,6 +118,12 @@ function otherButtons(currentClickedButton) {
 
   switch (clickedButton) {
     case "resume":
+      resumeWindowActive=true;
+      embededPDF.style.visibility="visible";
+      if(!loadPDFOnce){
+        embededPDF.data="resume.pdf#toolbar=0";
+        loadPDFOnce=true;
+      }
       setTimeout(function () {
         resumeWindowOptions.style.animation = "changeOpacityShow 0.6s linear forwards";
         resumeWindowOptions.style.pointerEvents = "unset";
@@ -140,4 +148,16 @@ function hoveredOptions(e) {
 }
 function unhoveredOptions(e) {
   e.classList.add("clipImageNotHovered");
+}
+function resizeResumeHovered(){
+  if(resumeWindowActive){
+    windowFrame.classList.add("resumeResizedWindow");
+    resumeWindowOptions.classList.add('resizeLogo');
+  }
+}
+function resizeResumeNotHovered(){
+  if(resumeWindowActive){
+    windowFrame.classList.remove('resumeResizedWindow'); 
+    resumeWindowOptions.classList.remove('resizeLogo'); 
+  }
 }

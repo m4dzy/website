@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 
 <head>
 
   <link rel="stylesheet" type="text/css" href="css/mainPage.css" />
   <title>Main page</title>
-  <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-  <!-- <meta name="format-detection" content="telephone=no" /> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 <body>
@@ -29,54 +29,74 @@
     </a>
     <a onclick="otherButtons('resume')" id="resumeID">
       <div>
-        <img id="frame" src="img/2022childCircleFrame.png" alt="resume circle: frame">
-        <img id="dashes" src="img/2022childCircleDashes.png" alt="resume circle: dashes">
-        <img id="outerRotation" src="img/2022childCircleOuterRotation.png" alt="resume circle: outer rotation">
-        <img id="innerRotation" src="img/2022childCircleInnerRotation.png" alt="resume circle: inner rotation">
-        <img id="contact" src="img/2022resume.png" alt="resume circle: resume design">
+        <img class="frame" src="img/2022childCircleFrame.png" alt="resume circle: frame">
+        <img class="dashes" src="img/2022childCircleDashes.png" alt="resume circle: dashes">
+        <img class="outerRotation" src="img/2022childCircleOuterRotation.png" alt="resume circle: outer rotation">
+        <img class="innerRotation" src="img/2022childCircleInnerRotation.png" alt="resume circle: inner rotation">
+        <img src="img/2022resume.png" alt="resume circle: resume design">
       </div>
     </a>
 
     <a onclick="otherButtons('portfolio')" id="portfolioID">
       <div>
-        <img id="frame" src="img/2022childCircleFrame.png" alt="portfolio circle: frame">
-        <img id="dashes" src="img/2022childCircleDashes.png" alt="portfolio circle: dashes">
-        <img id="outerRotation" src="img/2022childCircleOuterRotation.png" alt="portfolio circle: outer rotation">
-        <img id="innerRotation" src="img/2022childCircleInnerRotation.png" alt="portfolio circle: inner rotation">
-        <img id="contact" src="img/2022portfolio.png" alt="portfolio circle: portfolio design">
+        <img class="frame" src="img/2022childCircleFrame.png" alt="portfolio circle: frame">
+        <img class="dashes" src="img/2022childCircleDashes.png" alt="portfolio circle: dashes">
+        <img class="outerRotation" src="img/2022childCircleOuterRotation.png" alt="portfolio circle: outer rotation">
+        <img class="innerRotation" src="img/2022childCircleInnerRotation.png" alt="portfolio circle: inner rotation">
+        <img src="img/2022portfolio.png" alt="portfolio circle: portfolio design">
       </div>
     </a>
     <a onclick="otherButtons('contact')" id="contactID">
       <div>
-        <img id="frame" src="img/2022childCircleFrame.png" alt="contact circle: frame">
-        <img id="dashes" src="img/2022childCircleDashes.png" alt="contact circle: dashes">
-        <img id="outerRotation" src="img/2022childCircleOuterRotation.png" alt="contact circle: outer rotation">
-        <img id="innerRotation" src="img/2022childCircleInnerRotation.png" alt="contact circle: inner rotation">
-        <img id="contact" src="img/2022contact.png" alt="contact circle: contact design">
+        <img class="frame" src="img/2022childCircleFrame.png" alt="contact circle: frame">
+        <img class="dashes" src="img/2022childCircleDashes.png" alt="contact circle: dashes">
+        <img class="outerRotation" src="img/2022childCircleOuterRotation.png" alt="contact circle: outer rotation">
+        <img class="innerRotation" src="img/2022childCircleInnerRotation.png" alt="contact circle: inner rotation">
+        <img src="img/2022contact.png" alt="contact circle: contact design">
       </div>
     </a>
 
-    <a id="window">
+    <!-- <a id="window">
       <div>
         <img src="img/windowFrame.png"  alt="window frame">
       </div>
-    </a>
+    </a> -->
+    <a ></a>
 
-    <a href="resume.pdf" id="resumeWindow">
+    
+
+    <a href="resume.pdf" id="resumePDF">
         <img src="img/2022pdf.png" alt="resume icon">
     </a>
+    <!-- <a href="resume.pdf">
+      <img src="img/2022pdf.png" alt="resume icon">
+
+        </a> -->
+
+
 
     <a id="portfolioWindow">
       <img id="gitHub" src="img/gitHub2.png" alt="github icon">
       <img id="pinterest" src="img/pinterest.png" alt="pinterest icon">
     </a>
 
-    <a href="mailto:m4d@outlook.sa" class="myContactInfo">M4dzyy@gmail.com</a>
-    <a href="tel:720-256-3590" class="myContactInfo">720-256-3590</a>
+    <a class="myContactInfo" href="mailto:m4d@outlook.sa">M4dzyy@gmail.com</a>
+    <a class="myContactInfo" href="tel:720-256-3590">720-256-3590</a>
     <p class="myContactInfo">Full name: Abdulaziz alkhelaiwi</p>
     <p class="p2 myContactInfo">Preferred name: Aziz</p>
 
-  </div>
+
+    <!-- <iframe src="resume.pdf" width="640" height="480" frameborder="0"></iframe> -->
+    <!-- <embed src="resume.pdf" width="800px" height="2100px" /> -->
+    <div class="window">
+      <img id="windowImg" src="img/windowFrame.png"  alt="window frame">
+    </div>
+
+    <object onmouseover="resizeResumeHovered()" onmouseout="resizeResumeNotHovered()" id="embededPDF" type="application/pdf"
+    data-src="resume.pdf#toolbar=0" title="embeded pdf file">
+</object>
+
+</div>
   <script src="js/index.js"></script>
 
 </body>
