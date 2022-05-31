@@ -9,6 +9,8 @@ let mainButtonMinimized = false;
 let clickedButton;
 let loadPDFOnce;
 let resumeWindowActive;
+let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
 //main circle parts
 var rightPartOpened = document.querySelector('#rightOpen');
 var leftPartOpened = document.querySelector('#leftOpen');
@@ -43,6 +45,7 @@ function mainButton() {
     resumeCircle.style.animation = "expandResume 0.6s linear forwards";
     portfolioCircle.style.animation = "expandPortfolio 0.6s linear forwards";
     contactCircle.style.animation = "expandContact 0.6s linear forwards";
+    document.querySelector('#glowDiv').classList.remove("glow");
     mainButtonOpened = true;
 
   }
@@ -59,6 +62,7 @@ function mainButton() {
     resumeCircle.style.animation = "minimizeResume 0.6s linear forwards";
     portfolioCircle.style.animation = "minimizePortfolio 0.6s linear forwards";
     contactCircle.style.animation = "minimizeContact 0.6s linear forwards";
+    document.querySelector('#glowDiv').classList.add("glow");
     mainButtonOpened = false;
 
   }
@@ -150,14 +154,16 @@ function unhoveredOptions(e) {
   e.classList.add("clipImageNotHovered");
 }
 function resizeResumeHovered(){
-  if(resumeWindowActive){
+  if(resumeWindowActive&&!isMobile){
     windowFrame.classList.add("resumeResizedWindow");
+    embededPDF.classList.add("embededPDFResize");
     resumeWindowOptions.classList.add('resizeLogo');
   }
 }
 function resizeResumeNotHovered(){
-  if(resumeWindowActive){
+  if(resumeWindowActive&&!isMobile){
     windowFrame.classList.remove('resumeResizedWindow'); 
+    embededPDF.classList.remove("embededPDFResize");
     resumeWindowOptions.classList.remove('resizeLogo'); 
   }
 }

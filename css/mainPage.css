@@ -223,7 +223,7 @@ transition: all 0.1s ease;
   left: -46%;
   visibility: hidden;
 }
-#embededPDF:hover{
+#embededPDF.embededPDFResize{
   position: absolute;
   top: -10%;
   width: 196%;
@@ -360,6 +360,54 @@ span span:after, span span:before{
 }
 span span:after{
   top:1.5vmin;
+}
+
+.glow {
+  position: relative;
+  height: 50%;
+  width: 50%;
+  left: 25%;
+  top:25%;
+  border-radius: 50%;
+  visibility: visible;
+}
+.glow:before,
+.glow:after{
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  border-radius: 50%;
+  animation: glow-grow 2.7s ease-out infinite;
+}
+.glow:after {
+  animation-delay: .66s;
+}
+.glow{
+  animation-delay: 1.33s;
+  }
+@keyframes glow-grow {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 15px #16c1f3;
+
+  }
+  80% {
+    opacity: 1;
+    box-shadow: 0 0 15px #ff6600;
+
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+
+  }
 }
 
 
@@ -605,7 +653,4 @@ span span:after{
       -ms-transform: rotate(360deg) scale(1.3); 
     }
   }
-
-
-
 } 
