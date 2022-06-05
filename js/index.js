@@ -25,11 +25,13 @@ var portfolioCircle=document.querySelector('#portfolioID');
 var contactCircle=document.querySelector('#contactID');
 var mainCircle=document.querySelector('#mainButton');
 var mainCircleLowerDiv=document.querySelector('#mainButtonDiv');
-//windows
+//window frame
 var windowFrame=document.querySelector('.window');
+//options
 var resumeWindowOptions=document.querySelector('#resumePDF');
 var embededPDF=document.querySelector('#embededPDF');
-var portfolioWindowOptions=document.querySelector('#portfolioWindow');
+var portfolioGitHub=document.querySelector('#portfolioGitHub');
+var portfolioPinterst=document.querySelector('#portfolioPinterst');
 var contactWindowOptions=document.querySelector('#contactWindow');
 
 function mainButton() {
@@ -89,8 +91,10 @@ function mainButton() {
         resumeWindowActive=false;
         break;
       case "portfolio":
-        portfolioWindowOptions.style.animation = "changeOpacityHide 0.4s linear forwards";
-        portfolioWindowOptions.style.pointerEvents = "none";
+        portfolioGitHub.style.animation = "changeOpacityHide 0.4s linear forwards";
+        portfolioGitHub.style.pointerEvents = "none";
+        portfolioPinterst.style.animation = "changeOpacityHide 0.4s linear forwards";
+        portfolioPinterst.style.pointerEvents = "none";
         break;
       case "contact":
         Array.from(document.querySelectorAll(".myContactInfo"))
@@ -135,8 +139,10 @@ function otherButtons(currentClickedButton) {
       break;
     case "portfolio":
       setTimeout(function () {
-        portfolioWindowOptions.style.animation = "changeOpacityShow 0.6s linear forwards";
-        portfolioWindowOptions.style.pointerEvents = "unset";
+        portfolioGitHub.style.animation = "changeOpacityShow 0.6s linear forwards";
+        portfolioGitHub.style.pointerEvents = "unset";
+        portfolioPinterst.style.animation = "changeOpacityShow 0.6s linear forwards";
+        portfolioPinterst.style.pointerEvents = "unset";
       }, 600);
       break;
     case "contact":

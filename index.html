@@ -9,23 +9,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="data:;base64,=">
 </head>
+
 <body>
 
   <span><span></span></span>
   <div class="wrap">
     <a id="mainButton" onclick="mainButton()">
       <div id="mainButtonDiv">
-      <img src="img/MainCircle2.png" alt="main circle frame">
+        <img src="img/MainCircle2.png" alt="main circle frame">
 
-      <img class="closed" id="innerCircleClosed" src="img/2022innerCirc.png" alt="closed main circle: inner part">
-      <img class="closed" id="circleFanClosed" src="img/2022middleFan.png" alt="closed main circle: fan part">
-      <img class="closed" id="rightClosed" src="img/orangeSideR.png" alt="closed main circle: right part">
-      <img class="closed" id="leftClosed" src="img/orangeSideL.png" alt="closed main circle: left part">
+        <img class="closed" id="innerCircleClosed" src="img/2022innerCirc.png" alt="closed main circle: inner part">
+        <img class="closed" id="circleFanClosed" src="img/2022middleFan.png" alt="closed main circle: fan part">
+        <img class="closed" id="rightClosed" src="img/orangeSideR.png" alt="closed main circle: right part">
+        <img class="closed" id="leftClosed" src="img/orangeSideL.png" alt="closed main circle: left part">
 
-      <img class="opened" id="innerCircleOpened" src="img/2022midOpen.png" alt="opened main circle: inner part">
-      <img class="opened" id="rightOpen" src="img/blueSidesR.png" alt="opened main circle: right part">
-      <img class="opened" id="leftOpen" src="img/blueSidesL.png" alt="opened main circle: left part">
-    </div>
+        <img class="opened" id="innerCircleOpened" src="img/2022midOpen.png" alt="opened main circle: inner part">
+        <img class="opened" id="rightOpen" src="img/blueSidesR.png" alt="opened main circle: right part">
+        <img class="opened" id="leftOpen" src="img/blueSidesL.png" alt="opened main circle: left part">
+      </div>
     </a>
     <a onclick="otherButtons('resume')" id="resumeID">
       <div>
@@ -55,29 +56,15 @@
         <img src="img/2022contact.png" alt="contact circle: contact design">
       </div>
     </a>
-
-    <!-- <a id="window">
-      <div>
-        <img src="img/windowFrame.png"  alt="window frame">
-      </div>
-    </a> -->
-    <a ></a>
-
-    
-
-    <a href="resume.pdf" id="resumePDF">
-        <img src="img/2022pdf.png" alt="resume icon">
-    </a>
-    <!-- <a href="resume.pdf">
+    <a id="resumePDF" href="resume.pdf">
       <img src="img/2022pdf.png" alt="resume icon">
+    </a>
 
-        </a> -->
-
-
-
-    <a id="portfolioWindow">
-      <img id="gitHub" src="img/gitHub2.png" alt="github icon">
-      <img id="pinterest" src="img/pinterest.png" alt="pinterest icon">
+    <a id="portfolioGitHub" href="https://github.com/Aziz-DU/Projects" target="_blank" rel="noopener noreferrer">
+      <img src="img/gitHub2.png" alt="github icon">
+    </a>
+    <a id="portfolioPinterst" href="https://pin.it/77BbO61" target="_blank" rel="noopener noreferrer">
+      <img src="img/pinterest.png" alt="pinterest icon">
     </a>
 
     <a class="myContactInfo" href="mailto:m4d@outlook.sa">M4dzyy@gmail.com</a>
@@ -85,20 +72,17 @@
     <p class="myContactInfo">Full name: Abdulaziz alkhelaiwi</p>
     <p class="p2 myContactInfo">Preferred name: Aziz</p>
 
-
-    <!-- <iframe src="resume.pdf" width="640" height="480" frameborder="0"></iframe> -->
-    <!-- <embed src="resume.pdf" width="800px" height="2100px" /> -->
     <div class="window">
-      <img id="windowImg" src="img/windowFrame.png"  alt="window frame">
+      <img id="windowImg" src="img/windowFrame.png" alt="window frame">
     </div>
 
-    <object onmouseover="resizeResumeHovered()" onmouseout="resizeResumeNotHovered()" id="embededPDF" type="application/pdf"
-    data-src="resume.pdf#toolbar=0" title="embeded pdf file">
-    <p style="left:0%;top:25%">your browser doesn't<br>support viewing the PDF,<br>download instead.</p>
-</object>
-<div class="glow" id="glowDiv">
-</div>
-</div>
+    <object onmouseover="resizeResumeHovered()" onmouseout="resizeResumeNotHovered()" id="embededPDF"
+      type="application/pdf" data-src="resume.pdf#toolbar=0" title="embeded pdf file">
+      <p style="left:0%;top:25%">Your browser doesn't<br>support viewing the PDF...<br>download instead.</p>
+    </object>
+    <div class="glow" id="glowDiv">
+    </div>
+  </div>
   <script src="js/index.js"></script>
 
 </body>
