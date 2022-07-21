@@ -34,6 +34,10 @@ var portfolioGitHub=document.querySelector('#portfolioGitHub');
 var portfolioPinterst=document.querySelector('#portfolioPinterst');
 var contactWindowOptions=document.querySelector('#contactWindow');
 
+
+window.onload = function() {
+  mainButton();
+}
 function mainButton() {
 
   if (!mainButtonOpened && !mainButtonMinimized) {
